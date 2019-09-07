@@ -1,4 +1,4 @@
-package com.viandas.viandasYa;
+package unq.dapp.viandaslagauchita;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ViandasYaApplicationTests {
+public class ViandasLaGauchitaApplicationTests {
 
 	@Test
 	public void contextLoads() {

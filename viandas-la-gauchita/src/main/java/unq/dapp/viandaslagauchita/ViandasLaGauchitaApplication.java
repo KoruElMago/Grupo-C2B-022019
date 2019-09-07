@@ -1,13 +1,13 @@
-package com.viandas.viandasYa;
+package unq.dapp.viandaslagauchita;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ViandasYaApplication {
+public class ViandasLaGauchitaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ViandasYaApplication.class, args);
+		SpringApplication.run(ViandasLaGauchitaApplication.class, args);
 	}
 
 }
