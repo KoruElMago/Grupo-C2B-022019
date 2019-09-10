@@ -6,9 +6,16 @@ jobs:
   include:
   - stage: Test
     language: java
-    jdk: openjdk11
+    jdk: openjdk12
+    cache:
+      directories:
+        - $HOME/.m2
+    before_install:
+      - sudo apt-get install jq
     before_script:
-    - cd viandas-la-gauchita
+    - "cd viandas-la-gauchita"
+    - "mvn clean install -Dmaven.compiler.target=1.8 -Dmaven.compiler.source=1.8 -Dmaven.javadoc.skip=true -B -V"
+
     script:
     - mvn test -B
   - stage: Deploy
