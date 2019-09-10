@@ -8,14 +8,17 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-@RequiredArgsConstructor
-@NoArgsConstructor
-public class Viand {
+@Getter
+@Builder
+public class User {
 
     private @Id
     @GeneratedValue
     Long id;
-    private @NonNull String name;
-    private @NonNull String description;
+
+    @NonNull private String name;
+    @NonNull private String email;
+    @NonNull private String telphone;
+    @NonNull private Address address;
 
 }
