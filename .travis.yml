@@ -15,9 +15,9 @@ jobs:
     before_script:
     - "cd viandas-la-gauchita"
     - "mvn clean install"
-
     script:
     - mvn test -B
+
   - stage: Deploy
     provider: heroku
     api_key:
