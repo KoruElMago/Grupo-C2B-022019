@@ -24,6 +24,4 @@ public class UserTest {
         Assert.assertEquals("foo", user.getName());
 
     }
-
-    ;
 }
