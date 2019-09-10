@@ -14,7 +14,7 @@ jobs:
       - sudo apt-get install jq
     before_script:
     - "cd viandas-la-gauchita"
-    - "mvn clean install -Dmaven.compiler.target=1.8 -Dmaven.compiler.source=1.8 -Dmaven.javadoc.skip=true -B -V"
+    - "mvn clean install"
 
     script:
     - mvn test -B
