@@ -50,11 +50,18 @@
 				<groupId>com.heroku.sdk</groupId>
 				<artifactId>heroku-maven-plugin</artifactId>
 				<version>2.0.11</version>
+				<configuration>
+					<processTypes>
+						<web>java $JAVA_OPTS -Dserver.port=$PORT -cp
+							target/classes:target/dependency/*
+							de.codeboje.springbootbook.commentstore.CommentStoreApp</web>
+					</processTypes>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-	</build
+	</build>
 </project>
