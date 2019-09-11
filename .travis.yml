@@ -20,6 +20,7 @@ jobs:
 
   - stage: Deploy
     provider: heroku
+    jdk: openjdk12
     api_key:
       secure: PijlW9yxgQNxE/IP+TnZfmWUhUk8P31Oy7v8ltwwsNvsksEjtEUapVKGyJNaKSSE8lNAPwJbOb2vroIKWvoWVtCr6ZHY9CxyluzXIa+9xBO0T9bZfEJe8iIPyVXBTwfOEhJxLM9HIR4HaTs9ZhgmZlo5Vg38ssmA5o+tUcFyB808mAhAx2/Jk3MnbmyAtxMeOYC6PAc50FSrg0LZtdPFvyEZz2UdHLTSu3BgS7F49bTTjRDg01xopGjgQ3c8R3zugfiecViup/eCOFUzW9qVIvMVbgOkve9ByUYL7LS78LHjrd0GQB8abeWTnAo1zi+WqXn+YY02hKLX/ZpZ6UtL2+7ocR6DMZ+qCkfDp0cwioyGCiTQmAwBjmjnu68LYp943VYCKTU72o2nYmpiBUl/KH2q/zHDOCDMhJo3oi41lFrBYeZrU/gUzXILBm/DA1Lts+rM49+o1zarve+Q88bjPyGEB7lXf2M8ocOiPYyvf9iJvxspmP30utr5S+9Fjmx0pQnf98PJXWKb5AQXTDM7QEt8NAzJjjTf17OE8sKBGxP777Zsf8W0Y7vJnZlCe+eQWNY3QuLtoQtEFT7QTDh6nOPiSY/huH6vMgmA3J5DZncn7peWUS8B5PceEbo11MwVr3WuSgm9XeRKDdGse1ZlipIPQG1eJJaLn0w7bOCNFWo=
     app: viandas-la-gauchita-back
