@@ -10,27 +10,27 @@ import java.util.Set;
 
 @Data
 @Entity
-@RequiredArgsConstructor
-@NoArgsConstructor
 public class Viand {
 
     private @Id
     @GeneratedValue
     Long id;
+
+
     private @NonNull String name;
     private @NonNull String description;
-    private @NonNull Set categories;    //TODO:Discutir como crear los sub tipos
-    private @NonNull String deliveryPrice;
+    private @NonNull Set<String> categories;    //TODO:Discutir como crear los sub tipos
+    private @NonNull Float deliveryPrice;
 
     private @NonNull Date from, until;
-    private Float hourBand;
+    @Getter private Float hourBand;
     private Float meanTimeToDeliver;  //TODO:Escojer un mejor tipo
 
     private @NonNull Float price;
     private @NonNull Integer cantMin1;
     private @NonNull Float priceMin1;
-    private          Integer cantMin2;
-    private          Float priceMin2;
+    private          Integer cantMin2 = null;
+    private          Float priceMin2 = null;
     private @NonNull Integer cantMaxSales;
 }
 
