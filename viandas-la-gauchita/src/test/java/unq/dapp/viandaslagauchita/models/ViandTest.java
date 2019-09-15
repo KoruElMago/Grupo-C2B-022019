@@ -6,9 +6,12 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
+import static org.assertj.core.api.Assertions.*;
 
 //@ContextConfiguration
 //@TestExecutionListeners( { DependencyInjectionTestExecutionListener.class,
@@ -30,9 +33,11 @@ public class ViandTest {
                              "Corporativa",
                                 categorias,
                              15f,
-                            Date.from(Instant.MIN),Date.from(Instant.MAX),
+                                LocalDate.parse("2018-05-05"), LocalDate.parse("2018-05-05"),
                             20f, 20,
                             30f , 30);
+
+        assertThat(vianda.getName()).isEqualTo("Vianda");
 
         //assertEquals
     }

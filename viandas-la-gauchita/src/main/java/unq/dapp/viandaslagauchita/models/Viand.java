@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -22,7 +23,7 @@ public class Viand {
     private @NonNull Set<String> categories;    //TODO:Discutir como crear los sub tipos
     private @NonNull Float deliveryPrice;
 
-    private @NonNull Date from, until;
+    private @NonNull LocalDate from, until;
     @Getter private Float hourBand;
     private Float meanTimeToDeliver;  //TODO:Escojer un mejor tipo
 
