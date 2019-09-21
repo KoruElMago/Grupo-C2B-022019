@@ -11,6 +11,7 @@ import java.util.Set;
 
 @Data
 @Entity
+@Builder
 public class Viand {
 
     private @Id
@@ -24,14 +25,14 @@ public class Viand {
     private @NonNull Float deliveryPrice;
 
     private @NonNull LocalDate from, until;
-    @Getter private Float hourBand;
-    private Float meanTimeToDeliver;  //TODO:Escojer un mejor tipo
+    private @Builder.Default Float hourBand = 1f;
+    private @Builder.Default Float meanTimeToDeliver = 2f;  //TODO:Escojer un mejor tipo
 
     private @NonNull Float price;
     private @NonNull Integer cantMin1;
     private @NonNull Float priceMin1;
-    private          Integer cantMin2 = null;
-    private          Float priceMin2 = null;
+    private @Builder.Default Integer cantMin2 = null;
+    private @Builder.Default Float priceMin2 = null;
     private @NonNull Integer cantMaxSales;
 }
 

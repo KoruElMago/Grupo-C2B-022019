@@ -14,8 +14,8 @@ class LoadDatabase {
     @Bean
     CommandLineRunner initDatabase(ViandRepository repository) {
         return args -> {
-            log.info("Preloading " + repository.save(new Viand("Bilbo Baggel", "burglar")));
-            log.info("Preloading " + repository.save(new Viand("Frodo Baggel", "thief")));
+            //log.info("Preloading " + repository.save(new Viand())); //"Bilbo Baggel", "burglar"
+            //log.info("Preloading " + repository.save(new Viand())); //"Frodo Baggel", "thief"
         };
     }
 }
