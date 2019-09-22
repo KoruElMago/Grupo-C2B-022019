@@ -1,10 +1,11 @@
-package unq.dapp.viandaslagauchita.models;
+package unq.dapp.viandaslagauchita.models.user;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import unq.dapp.viandaslagauchita.models.Address;
 import unq.dapp.viandaslagauchita.models.user.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)

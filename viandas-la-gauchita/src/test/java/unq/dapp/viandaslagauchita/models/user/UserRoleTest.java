@@ -1,4 +1,4 @@
-package unq.dapp.viandaslagauchita.models;
+package unq.dapp.viandaslagauchita.models.user;
 
 import org.junit.Assert;
 import org.junit.Test;
