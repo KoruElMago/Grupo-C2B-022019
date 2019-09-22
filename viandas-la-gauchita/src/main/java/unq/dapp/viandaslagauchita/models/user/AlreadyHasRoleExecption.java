@@ -1,4 +1,4 @@
-package unq.dapp.viandaslagauchita.models.user_role;
+package unq.dapp.viandaslagauchita.models.user;
 
 public class AlreadyHasRoleExecption extends RuntimeException {
 }

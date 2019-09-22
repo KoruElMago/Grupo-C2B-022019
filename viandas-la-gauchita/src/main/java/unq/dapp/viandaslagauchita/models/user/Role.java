@@ -1,15 +1,16 @@
-package unq.dapp.viandaslagauchita.models.user_role;
+package unq.dapp.viandaslagauchita.models.user;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.Entity;
 
 @Getter
 @Data
-@Entity
+@AllArgsConstructor
 public abstract class Role {
+
+    @NonNull
+    private String roleName;
 
     public boolean canPublishViand() {
         return false;
@@ -20,7 +21,6 @@ public abstract class Role {
     }
 
     public boolean sameRole(Role role) {
-        return roleName().equals(role.roleName());
+        return getRoleName().equals(role.getRoleName());
     }
-    public abstract String roleName();
 }

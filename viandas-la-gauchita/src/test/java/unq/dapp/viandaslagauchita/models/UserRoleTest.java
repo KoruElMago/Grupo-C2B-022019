@@ -4,10 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import unq.dapp.viandaslagauchita.models.user_role.AlreadyHasRoleExecption;
-import unq.dapp.viandaslagauchita.models.user_role.Client;
-import unq.dapp.viandaslagauchita.models.user_role.Provider;
-import unq.dapp.viandaslagauchita.models.user_role.Role;
+import unq.dapp.viandaslagauchita.models.user.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UserRoleTest {

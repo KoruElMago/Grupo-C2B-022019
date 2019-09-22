@@ -1,16 +1,15 @@
-package unq.dapp.viandaslagauchita.models;
+package unq.dapp.viandaslagauchita.models.user;
 
-import lombok.*;
-import unq.dapp.viandaslagauchita.models.user_role.AlreadyHasRoleExecption;
-import unq.dapp.viandaslagauchita.models.user_role.Role;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import unq.dapp.viandaslagauchita.models.Address;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Data
 @Entity
