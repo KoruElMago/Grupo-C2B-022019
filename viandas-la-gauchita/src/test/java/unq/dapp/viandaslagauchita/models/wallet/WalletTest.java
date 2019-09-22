@@ -30,4 +30,56 @@ public class WalletTest {
         Assert.assertEquals(wallet.getBalance(),amountToApply);
 
     }
+
+    @Test(expected = NegativeWalletException.class)
+    public void testApplyNegativeTransacction(){
+        Wallet wallet = Wallet.builder().build();
+        Float initialValue = 0.0f;
+
+        Assert.assertEquals(wallet.getBalance(),initialValue);
+        Float amountToApply = -5.0f;
+
+        wallet.applyTransaction(amountToApply);
+
+        Assert.assertEquals(wallet.getBalance(),amountToApply);
+
+    }
+
+    @Test
+    public void testApplyMultipleTransacction(){
+        Wallet wallet = Wallet.builder().build();
+        Float initialValue = 0.0f;
+
+        Assert.assertEquals(wallet.getBalance(),initialValue);
+        Float amountToApply = 5.0f;
+
+        wallet.applyTransaction(amountToApply);
+
+        Assert.assertEquals(wallet.getBalance(),amountToApply);
+
+        amountToApply = 5.0f;
+
+        wallet.applyTransaction(amountToApply);
+
+        Float expectedValue = 10.0f;
+
+        Assert.assertEquals(wallet.getBalance(),expectedValue);
+
+        amountToApply = 5.0f;
+
+        wallet.applyTransaction(amountToApply);
+
+        expectedValue = 15.0f;
+
+        Assert.assertEquals(wallet.getBalance(),expectedValue);
+
+        amountToApply = -5.0f;
+
+        wallet.applyTransaction(amountToApply);
+
+        expectedValue = 10.0f;
+
+        Assert.assertEquals(wallet.getBalance(),expectedValue);
+    }
+
 }
