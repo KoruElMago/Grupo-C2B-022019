@@ -1,19 +1,17 @@
 package unq.dapp.viandaslagauchita.models;
 
-import junit.framework.AssertionFailedError;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import unq.dapp.viandaslagauchita.models.viand.Viand;
 
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-
-import static org.assertj.core.api.Assertions.*;
 
 //@ContextConfiguration
 //@TestExecutionListeners( { DependencyInjectionTestExecutionListener.class,

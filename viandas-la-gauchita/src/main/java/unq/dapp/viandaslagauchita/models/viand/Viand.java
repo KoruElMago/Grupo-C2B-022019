@@ -1,13 +1,16 @@
-package unq.dapp.viandaslagauchita.models;
+package unq.dapp.viandaslagauchita.models.viand;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NonNull;
+import unq.dapp.viandaslagauchita.models.viand.condition.Condition;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Set;
+import java.util.*;
+
 
 @Data
 @Entity
@@ -18,10 +21,23 @@ public class Viand {
     @GeneratedValue
     Long id;
 
+    @Builder.Default
+    private List<Condition> conditions = new ArrayList<Condition>();
+    @Builder.Default
+    private List<Price> prices = new ArrayList<Price>();
+    @Builder.Default
+    private Set<Category> categories = new HashSet<Category>();
+
+    public Float getPriceForBuy(Buy buy){
+        Optional<Price> price = prices.stream().filter(price1 -> price1.matchConditions(buy)).findFirst();
+        if (price.isEmpty()){
+            throw new NoAvailabePrice();
+        }
+        return price.get().getAmount();
+    }
 
     private @NonNull String name;
     private @NonNull String description;
-    private @NonNull Set<String> categories;    //TODO:Discutir como crear los sub tipos
     private @NonNull Float deliveryPrice;
 
     private @NonNull LocalDate from, until;

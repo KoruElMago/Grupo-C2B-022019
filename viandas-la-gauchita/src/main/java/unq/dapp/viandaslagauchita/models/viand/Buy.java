@@ -1,18 +1,15 @@
-package unq.dapp.viandaslagauchita.models;
+package unq.dapp.viandaslagauchita.models.viand;
 
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import org.springframework.data.util.Pair;
+import unq.dapp.viandaslagauchita.models.user.Provider;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.sql.Time;
-import java.util.Date;
-import java.util.Queue;
+import java.util.*;
 
 @Data
 @Entity
@@ -27,12 +24,25 @@ public class Buy {
     //Los compradores podrán comprar 1 menú (o más) del mismo servicio/negocio.
 
     private @NonNull Provider service;
-    private @NonNull Queue<Pair<Viand,Integer>> shopping;  //Se debera comprobar que el entero es mayor a 0
+
+    @Builder.Default
+    private Map<Viand,Integer> shopping = new HashMap<>();
+
 
     // Para hacer un pedido se deberá seleccionar Menú, Cantidad, TipoDeEntrega, FechaDeEntrega, HoraDeEntrega.
-    private TypeOfEntrega entrega;
+    private TypeOfDelivery entrega;
     private Date dateOfDeliver;
     private Time timeOfDeliver;
+
+    public void addViand(Viand viand, Integer quantity){
+        shopping.put(viand,shopping.getOrDefault(viand,0) + quantity);
+    }
+
+    public void removeViand(Viand viand, Integer quantity){
+        if (shopping.getOrDefault(viand,0) <= quantity){
+            shopping.remove(viand);
+        }
+    }
 }
 
 
