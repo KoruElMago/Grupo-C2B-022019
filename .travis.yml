@@ -1,7 +1,6 @@
 language: java
 stages:
 - Test
-- Deploy
 jobs:
   include:
   - stage: Test
