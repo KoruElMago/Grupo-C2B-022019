@@ -34,6 +34,9 @@ public class Viand {
     private @Builder.Default Integer cantMin2 = null;
     private @Builder.Default Float priceMin2 = null;
     private @NonNull Integer cantMaxSales;
+
+    //Constructor autogenerado para agregar condiciones de creacion, por si cambiamos de idea
+    //Viand(Long id, @NonNull String name, @NonNull String description, @NonNull Set<String> categories, @NonNull Float deliveryPrice, @NonNull LocalDate from, @NonNull LocalDate until, Float hourBand, Float meanTimeToDeliver, @NonNull Float price, @NonNull Integer cantMin1, @NonNull Float priceMin1, Integer cantMin2, Float priceMin2, @NonNull Integer cantMaxSales) { }
 }
 
 /*

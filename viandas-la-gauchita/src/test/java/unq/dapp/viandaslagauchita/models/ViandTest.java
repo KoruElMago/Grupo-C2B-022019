@@ -78,8 +78,7 @@ public class ViandTest {
                 .cantMaxSales(30)
                 .build();
 
-
-
+        assertThat(vianda.getId()).isEqualTo(0);
         Assert.assertEquals("Vianda", vianda.getName());
         Assert.assertEquals("Corporativa",vianda.getDescription() );
         Assert.assertEquals(categorias, vianda.getCategories() );
