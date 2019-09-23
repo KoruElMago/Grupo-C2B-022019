@@ -19,6 +19,7 @@ jobs:
     - mvn test -B
 
   - stage: Deploy
+    if: branch = deploy
     provider: heroku
     jdk: openjdk12
     api_key:
