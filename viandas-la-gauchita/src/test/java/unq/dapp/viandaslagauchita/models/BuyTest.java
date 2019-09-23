@@ -8,6 +8,8 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import unq.dapp.viandaslagauchita.models.user.Provider;
+import unq.dapp.viandaslagauchita.models.viand.Buy;
+import unq.dapp.viandaslagauchita.models.viand.Viand;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -29,10 +31,10 @@ public class BuyTest {
 
     @Test
     public void testHacerCompra(){
-        Buy compra = new Buy(proveedor,vianda,3,null,null,null);
+        Buy compra = new Buy(proveedor);//proveedor,vianda,3,null,null,null);
 
         Assert.assertEquals(compra.getService(),proveedor);
-        Assert.assertTrue(compra.getViandas().contains(vianda));
-        Assert.assertEquals(compra.getViandas().size(),1 );
+        Assert.assertTrue(compra.getViand().contains(vianda));
+        Assert.assertEquals(compra.getViand().size(),1 );
     }
 }

@@ -14,6 +14,7 @@ import java.util.*;
 @Data
 @Entity
 @RequiredArgsConstructor
+@Builder
 public class Buy {
 
     private @Id
@@ -29,7 +30,7 @@ public class Buy {
 
 
     // Para hacer un pedido se deberá seleccionar Menú, Cantidad, TipoDeEntrega, FechaDeEntrega, HoraDeEntrega.
-    private TypeOfDelivery entrega;
+    private TypeOfDelivery deliveryType;
     private Date dateOfDeliver;
     private Time timeOfDeliver;
 
@@ -43,13 +44,7 @@ public class Buy {
         }
     }
 
-    public Buy(Provider proveedor,Viand vianda, int cantidad,TypeOfEntrega tipoEntrega, Date tiempo, Time horaEntrega){
-        service = proveedor;
-        shopping = new HashMap<>();
-        shopping.put(vianda,cantidad);
-    }
-
-    public Set<Viand> getViandas(){
+    public Set<Viand> getViand(){
         return shopping.keySet();
     }
 }
