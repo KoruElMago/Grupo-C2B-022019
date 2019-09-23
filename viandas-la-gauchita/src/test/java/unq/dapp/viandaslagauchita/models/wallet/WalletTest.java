@@ -16,7 +16,6 @@ public class WalletTest {
         Assert.assertEquals(wallet.getBalance(),initialValue);
     }
 
-
     @Test
     public void testApplyPositiveTransacction(){
         Wallet wallet = Wallet.builder().build();
@@ -81,5 +80,4 @@ public class WalletTest {
 
         Assert.assertEquals(wallet.getBalance(),expectedValue);
     }
-
 }

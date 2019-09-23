@@ -21,4 +21,5 @@ public class Wallet {
         }
         this.balance += amount;
     }
+
 }
