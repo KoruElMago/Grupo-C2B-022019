@@ -1,23 +1,38 @@
 package unq.dapp.viandaslagauchita.models;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import unq.dapp.viandaslagauchita.models.user.Provider;
 
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.assertj.core.api.Assertions.*;
 
-//@ContextConfiguration
-//@TestExecutionListeners( { DependencyInjectionTestExecutionListener.class,
-//        StepScopeTestExecutionListener.class })
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 public class BuyTest {
+
+    private Provider proveedor;
+    private Viand vianda;
+
+    @Before
+    public void setUp(){
+        proveedor = Mockito.mock(Provider.class);
+        vianda = Mockito.mock(Viand.class);
+    }
+
     @Test
-    public void test(){}
+    public void testHacerCompra(){
+        Buy compra = new Buy(proveedor,vianda,3,null,null,null);
+
+        Assert.assertEquals(compra.getService(),proveedor);
+        Assert.assertTrue(compra.getViandas().contains(vianda));
+        Assert.assertEquals(compra.getViandas().size(),1 );
+    }
 }

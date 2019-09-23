@@ -14,7 +14,6 @@ import java.util.*;
 @Data
 @Entity
 @RequiredArgsConstructor
-@NoArgsConstructor
 public class Buy {
 
     private @Id
@@ -42,6 +41,16 @@ public class Buy {
         if (shopping.getOrDefault(viand,0) <= quantity){
             shopping.remove(viand);
         }
+    }
+
+    public Buy(Provider proveedor,Viand vianda, int cantidad,TypeOfEntrega tipoEntrega, Date tiempo, Time horaEntrega){
+        service = proveedor;
+        shopping = new HashMap<>();
+        shopping.put(vianda,cantidad);
+    }
+
+    public Set<Viand> getViandas(){
+        return shopping.keySet();
     }
 }
 

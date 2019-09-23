@@ -7,5 +7,5 @@ public enum Category {
     Sushi,
     Empanadas,
     Green,
-    Vegano,''
+    Vegano
 }
