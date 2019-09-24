@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import unq.dapp.viandaslagauchita.models.Viand;
+import unq.dapp.viandaslagauchita.models.viand.Viand;
 import unq.dapp.viandaslagauchita.persistence.ViandRepository;
 
 @RestController
