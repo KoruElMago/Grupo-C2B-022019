@@ -13,7 +13,7 @@ import java.util.*;
 
 @Data
 @Entity
-@RequiredArgsConstructor
+
 @Builder
 public class Buy {
 
