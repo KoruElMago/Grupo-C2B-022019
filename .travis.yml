@@ -2,6 +2,9 @@ language: java
 stages:
 - Test
 - Deploy
+before_cache:
+- rm -rf $HOME/.m2/repository/com/autentia/Grupo-C2B-022019-back
+
 jobs:
   include:
   - stage: Test
