@@ -41,6 +41,8 @@ public class Buy {
     public void removeViand(Viand viand, Integer quantity){
         if (shopping.getOrDefault(viand,0) <= quantity){
             shopping.remove(viand);
+        } else {
+            shopping.replace(viand, shopping.get(viand) - quantity );
         }
     }
 

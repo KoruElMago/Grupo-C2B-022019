@@ -42,6 +42,11 @@ public class BuyTest {
         Assert.assertNull( compra.getDeliveryType() );
     }
 
+    @Test(expected = java.lang.NullPointerException.class)
+    public void testCompraIncompleta(){
+        Buy.builder().build();
+    }
+
     @Test
     public void testHacerCompraCon20Viandas(){
         Buy compra = Buy.builder().service(proveedor).build();
@@ -60,6 +65,20 @@ public class BuyTest {
 
         Assert.assertEquals( 1, compra.getViand().size() );
         Assert.assertEquals( ((int) 20) , ((int) compra.getShopping().get(vianda) ) );
+    }
+
+    @Test
+    public void testHacerCompraYQuitarViandas(){
+        Buy compra = Buy.builder().service(proveedor).build();
+
+        compra.addViand(vianda,20);
+        Assert.assertEquals( ((int) 20) , ((int) compra.getShopping().get(vianda) ) );
+        Assert.assertEquals( 1, compra.getViand().size() );
+
+        compra.removeViand(vianda,10);
+
+        Assert.assertEquals( 1, compra.getViand().size() );
+        Assert.assertEquals( ((int) 10) , ((int) compra.getShopping().get(vianda) ) );
     }
 
     @Test
