@@ -22,7 +22,6 @@ jobs:
     - "cd viandas-la-gauchita"
     - "mvn clean install"
     - "curl -LSs $(curl -LSs https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r '.assets | map({content_type, browser_download_url} | select(.content_type | contains("application/java-archive"))) | .[0].browser_download_url') -o codacy-coverage-reporter-assembly.jar"
-
     script:
     - mvn test -B
 
