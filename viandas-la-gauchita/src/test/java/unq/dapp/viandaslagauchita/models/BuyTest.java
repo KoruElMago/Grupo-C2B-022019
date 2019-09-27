@@ -6,18 +6,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import unq.dapp.viandaslagauchita.models.user.Provider;
 import unq.dapp.viandaslagauchita.models.viand.Buy;
 import unq.dapp.viandaslagauchita.models.viand.TypeOfDelivery;
 import unq.dapp.viandaslagauchita.models.viand.Viand;
-
 import java.sql.Time;
-import java.time.Instant;
-import java.time.LocalDate;
 import java.util.Date;
-
-import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BuyTest {
@@ -42,7 +36,7 @@ public class BuyTest {
         Assert.assertNull( compra.getDeliveryType() );
     }
 
-    @Test(expected = java.lang.NullPointerException.class)
+    @Test(expected = NullPointerException.class)
     public void testCompraIncompleta(){
         Buy.builder().build();
     }

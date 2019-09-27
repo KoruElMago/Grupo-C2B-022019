@@ -1,21 +1,15 @@
 package unq.dapp.viandaslagauchita.models.viand;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Answers;
 import org.mockito.Mockito;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import unq.dapp.viandaslagauchita.models.viand.Category;
-import unq.dapp.viandaslagauchita.models.viand.Viand;
 import unq.dapp.viandaslagauchita.models.viand.condition.BuyCondition;
 import unq.dapp.viandaslagauchita.models.viand.condition.Condition;
 
 import java.sql.Time;
 import java.time.*;
-import java.time.temporal.TemporalAdjusters;
-import java.time.temporal.TemporalQueries;
 import java.util.*;
 
 //@ContextConfiguration
