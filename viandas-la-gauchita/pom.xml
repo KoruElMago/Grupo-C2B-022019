@@ -124,7 +124,7 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
-                    <!--
+
 					<execution>
 						<id>pre-unit-test</id>
 						<phase>process-test-classes</phase>
@@ -148,7 +148,8 @@
 							<dataFile>${jacoco.utreportfile}</dataFile>
 						</configuration>
 					</execution>
-                    -->
+
+                    <!--
 					<execution>
 						<id>pre-integration-test</id>
 						<phase>pre-integration-test</phase>
@@ -172,6 +173,7 @@
 							<dataFile>${jacoco.itreportfile}</dataFile>
 						</configuration>
 					</execution>
+					-->
 				</executions>
 			</plugin>
 			<plugin>
