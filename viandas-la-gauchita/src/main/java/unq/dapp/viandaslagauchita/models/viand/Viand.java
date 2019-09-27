@@ -28,6 +28,22 @@ public class Viand {
     @Builder.Default
     private Set<Category> categories = new HashSet<Category>();
 
+    @NonNull private String name;
+    @NonNull private String description;
+    @NonNull private Float deliveryPrice;
+
+    @NonNull private LocalDate from;
+    @NonNull private LocalDate until;
+    private @Builder.Default Float hourBand = 1f;
+    private @Builder.Default Float meanTimeToDeliver = 2f;  //TODO:Escojer un mejor tipo
+
+    @NonNull private Float price;
+    @NonNull private Integer cantMin1;
+    @NonNull private Float priceMin1;
+    private @Builder.Default Integer cantMin2 = null;
+    private @Builder.Default Float priceMin2 = null;
+    @NonNull private Integer cantMaxSales;
+
     public Float getPriceForBuy(Buy buy){
         Optional<Price> price = prices.stream().filter(price1 -> price1.matchConditions(buy)).findFirst();
         if (price.isEmpty()){
@@ -35,24 +51,6 @@ public class Viand {
         }
         return price.get().getAmount();
     }
-
-    private @NonNull String name;
-    private @NonNull String description;
-    private @NonNull Float deliveryPrice;
-
-    private @NonNull LocalDate from, until;
-    private @Builder.Default Float hourBand = 1f;
-    private @Builder.Default Float meanTimeToDeliver = 2f;  //TODO:Escojer un mejor tipo
-
-    private @NonNull Float price;
-    private @NonNull Integer cantMin1;
-    private @NonNull Float priceMin1;
-    private @Builder.Default Integer cantMin2 = null;
-    private @Builder.Default Float priceMin2 = null;
-    private @NonNull Integer cantMaxSales;
-
-    //Constructor autogenerado para agregar condiciones de creacion, por si cambiamos de idea
-    //Viand(Long id, @NonNull String name, @NonNull String description, @NonNull Set<String> categories, @NonNull Float deliveryPrice, @NonNull LocalDate from, @NonNull LocalDate until, Float hourBand, Float meanTimeToDeliver, @NonNull Float price, @NonNull Integer cantMin1, @NonNull Float priceMin1, Integer cantMin2, Float priceMin2, @NonNull Integer cantMaxSales) { }
 }
 
 /*

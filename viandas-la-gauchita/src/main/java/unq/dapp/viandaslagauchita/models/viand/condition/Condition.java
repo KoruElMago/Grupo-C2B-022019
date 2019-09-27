@@ -4,5 +4,5 @@ import unq.dapp.viandaslagauchita.models.viand.Buy;
 
 public interface Condition {
     
-    public boolean applyBuy(Buy buy);
+    boolean applyBuy(Buy buy);
 }

@@ -6,18 +6,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import unq.dapp.viandaslagauchita.models.user.Provider;
 import unq.dapp.viandaslagauchita.models.viand.Buy;
 import unq.dapp.viandaslagauchita.models.viand.TypeOfDelivery;
 import unq.dapp.viandaslagauchita.models.viand.Viand;
-
 import java.sql.Time;
-import java.time.Instant;
-import java.time.LocalDate;
 import java.util.Date;
-
-import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BuyTest {
@@ -42,6 +36,11 @@ public class BuyTest {
         Assert.assertNull( compra.getDeliveryType() );
     }
 
+    @Test(expected = NullPointerException.class)
+    public void testCompraIncompleta(){
+        Buy.builder().build();
+    }
+
     @Test
     public void testHacerCompraCon20Viandas(){
         Buy compra = Buy.builder().service(proveedor).build();
@@ -60,6 +59,20 @@ public class BuyTest {
 
         Assert.assertEquals( 1, compra.getViand().size() );
         Assert.assertEquals( ((int) 20) , ((int) compra.getShopping().get(vianda) ) );
+    }
+
+    @Test
+    public void testHacerCompraYQuitarViandas(){
+        Buy compra = Buy.builder().service(proveedor).build();
+
+        compra.addViand(vianda,20);
+        Assert.assertEquals( ((int) 20) , ((int) compra.getShopping().get(vianda) ) );
+        Assert.assertEquals( 1, compra.getViand().size() );
+
+        compra.removeViand(vianda,10);
+
+        Assert.assertEquals( 1, compra.getViand().size() );
+        Assert.assertEquals( ((int) 10) , ((int) compra.getShopping().get(vianda) ) );
     }
 
     @Test

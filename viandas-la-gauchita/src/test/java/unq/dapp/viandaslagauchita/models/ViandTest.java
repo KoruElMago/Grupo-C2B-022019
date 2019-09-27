@@ -1,16 +1,13 @@
 package unq.dapp.viandaslagauchita.models;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import unq.dapp.viandaslagauchita.models.viand.Category;
 import unq.dapp.viandaslagauchita.models.viand.Viand;
 
-import java.time.Instant;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,7 +18,8 @@ import java.util.Set;
 public class ViandTest {
 
     private Set<Category> categorias;
-    private LocalDate from,until;
+    private LocalDate from;
+    private LocalDate until;
 
     public void init(){
         categorias = new HashSet<>();
@@ -56,7 +54,7 @@ public class ViandTest {
         Assert.assertEquals(((long)30), (long) vianda.getCantMaxSales() );
     }
 
-    @Test(expected = java.lang.NullPointerException.class)
+    @Test(expected = NullPointerException.class)
     public void testCreacionDeViandaConBuilderIncompleto(){
         init();
         Viand.builder().build();
