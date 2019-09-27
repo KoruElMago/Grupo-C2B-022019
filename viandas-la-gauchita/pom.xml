@@ -20,19 +20,20 @@
 		<jacoco.version>0.8.4</jacoco.version>
 		<jacoco.outputDir>${project.build.directory}</jacoco.outputDir>
 
-        <jacoco.utreportpath>${project.build.directory}/jacoco</jacoco.utreportpath>
+
+<!--        <jacoco.utreportpath>${project.build.directory}/jacoco</jacoco.utreportpath>
         <jacoco.utreportfile>${project.build.directory}/jacoco/jacoco.exec</jacoco.utreportfile>
 
         <jacoco.itreportpath>${project.build.directory}/jacoco</jacoco.itreportpath>
-        <jacoco.itreportfile>${project.build.directory}/jacoco/jacoco-it.exec</jacoco.itreportfile>
+        <jacoco.itreportfile>${project.build.directory}/jacoco/jacoco-it.exec</jacoco.itreportfile>-->
 
-        <!-- Originales
+
 		<jacoco.utreportpath>${project.build.directory}/jacoco</jacoco.utreportpath>
 		<jacoco.utreportfile>${jacoco.utreportpath}/jacoco.exec</jacoco.utreportfile>
 
 		<jacoco.itreportpath>${project.build.directory}/jacoco</jacoco.itreportpath>
 		<jacoco.itreportfile>${jacoco.itreportpath}/jacoco-it.exec</jacoco.itreportfile>
-		-->
+
 	</properties>
 	<dependencies>
 		<dependency>
