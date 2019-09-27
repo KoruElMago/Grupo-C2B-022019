@@ -3,17 +3,10 @@ package unq.dapp.viandaslagauchita.models.viand.condition;
 import unq.dapp.viandaslagauchita.models.viand.Buy;
 
 import java.sql.Time;
-import java.time.Duration;
 import java.time.Instant;
-import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.temporal.Temporal;
-import java.time.temporal.TemporalAccessor;
-import java.time.temporal.TemporalAmount;
-import java.time.temporal.TemporalUnit;
 import java.util.Collection;
 import java.util.Date;
-import java.util.function.Predicate;
 
 public class BuyCondition implements Condition {
 

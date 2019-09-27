@@ -2,8 +2,6 @@ package unq.dapp.viandaslagauchita.models.user;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-
 @Getter
 @Data
 @AllArgsConstructor
