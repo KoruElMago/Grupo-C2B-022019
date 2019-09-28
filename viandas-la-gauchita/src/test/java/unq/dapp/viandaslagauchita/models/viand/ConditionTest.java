@@ -64,7 +64,7 @@ public class ConditionTest {
         Viand viand = Mockito.mock(Viand.class);
         Map<Viand,Integer> mapa = new HashMap<>();
         mapa.put(viand,1);
-        Time horarioActualmenos5min = Time.valueOf( LocalTime.now().minusMinutes(5) );
+        Time horarioActualmenos5min = Time.valueOf( LocalTime.now().minusMinutes(10) );
 
         Mockito.when( buy.getShopping() ).thenReturn( mapa );
         Mockito.when( buy.getTimeOfDeliver() ).thenReturn( horarioActualmenos5min );
@@ -84,11 +84,11 @@ public class ConditionTest {
         Map<Viand,Integer> mapa = new HashMap<>();
             mapa.put(viand,1);
 
+        Condition cond = new BuyCondition();
+
         Mockito.when( buy.getShopping() ).thenReturn( mapa );
         Mockito.when( buy.getTimeOfDeliver() ).thenReturn( Time.valueOf( LocalTime.now() ) );
         Mockito.when( buy.getDateOfDeliver() ).thenReturn( Date.from( Instant.now() ) );
-
-        Condition cond = new BuyCondition();
 
         Assert.assertFalse( "El horario de delivery debia ser antes de las 2hr minimas "
                 , cond.applyBuy( buy ) );
