@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NonNull;
 import unq.dapp.viandaslagauchita.models.viand.condition.Condition;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,10 +22,15 @@ public class Viand {
     @GeneratedValue
     Long id;
 
+    @ElementCollection(targetClass=Condition.class)
     @Builder.Default
     private List<Condition> conditions = new ArrayList<Condition>();
+
+    @ElementCollection(targetClass=Price.class)
     @Builder.Default
     private List<Price> prices = new ArrayList<Price>();
+
+    @ElementCollection(targetClass=Category.class)
     @Builder.Default
     private Set<Category> categories = new HashSet<Category>();
 

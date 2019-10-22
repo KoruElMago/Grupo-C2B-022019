@@ -4,11 +4,17 @@ import lombok.*;
 import unq.dapp.viandaslagauchita.models.Address;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 @Getter
 @Data
 public class Provider extends Role {
+
+    private @Id
+    @GeneratedValue
+    Long id;
 
     private String logo_url;
     private Address address;

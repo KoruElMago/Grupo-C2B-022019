@@ -6,6 +6,8 @@ import lombok.Getter;
 import unq.dapp.viandaslagauchita.models.viand.Buy;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,10 @@ import java.util.List;
 @Getter
 @Data
 public class Client extends Role {
+
+    private @Id
+    @GeneratedValue
+    Long id;
 
     private List<Buy> buys;
 
